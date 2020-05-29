@@ -145,7 +145,7 @@ string HexToBinary(const string& hex)
 		dec /= 2;
 	}
 
-	return charCount(4 - (hex.size() % 4), "0") + binary;
+	return charCount((4 - (binary.size() % 4)) % 4, "0") + binary;
 }
 
 int main() {
@@ -187,18 +187,22 @@ int main() {
 				default:
 					break;
 				}
+
 				system("pause");
 			}
 			else {
 				cin.clear();
 				cin.ignore(10000000, '\n');
 			}
+
 			system("cls");
 		}
 		catch (runtime_error e) {
 			cerr << e.what() << endl;
+
 			system("pause");
 		}
+
 		system("cls");
 	}
 }
